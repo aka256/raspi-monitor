@@ -32,6 +32,7 @@ fn save_temperature() {
     let file_path = dir_path.join(now_local.format("%Y%m%d.csv").to_string());
     let f: File;
     f = OpenOptions::new()
+        .create(true)
         .append(true)
         .open(file_path)
         .expect("failed to open a file");
